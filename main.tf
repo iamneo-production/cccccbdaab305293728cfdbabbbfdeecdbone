@@ -3,6 +3,11 @@ provider "aws"{
     access_key ="AKIAX3IN6TIL43S3TABJ"
     secret_key="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"
 }
-resource "aws" ec2_instance{
+resource "aws_instance" ec2_instance{
+    ami="ami-072f48a9ed4f1bbda"
+    instance_type ="t2.micro"
 
+}
+output "public_ip" {
+  value       = aws_instance.ec2_instance.public_ip
 }
